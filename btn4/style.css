@@ -39,7 +39,6 @@ a::after{
     mix-blend-mode:multiply;
     transform-origin:top
 }
-
 a::before{
     content: "";
     background-color: hsl(0, 67%, 50%);
