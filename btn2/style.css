@@ -24,7 +24,7 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
+    position: relative;
 }
 
 a::before{
@@ -63,5 +63,5 @@ a::after{
 
 a:hover::before,
 a:hover::after{
-    transform: rotateY(0);
+    transform: rotateX(0);
 }
