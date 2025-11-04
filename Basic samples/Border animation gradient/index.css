@@ -1,0 +1,58 @@
+body{
+    background-color: hsl(246, 19%, 10%);
+    color: white;
+}
+@property --angle {
+    syntax:"<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+.container{
+    background-color: hsl(290, 60%, 10%);
+    background-size: cover;
+    width: 30vw;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+    left: 35vw;
+    top: 20vh;
+    border-radius: 10px;
+}
+.container::after , .container::before{
+    content: "";
+    background-image: conic-gradient( from var(--angle), transparent 80%, hsl(240, 100%, 55%),hsl(0, 100%, 55%),hsl(120, 100%, 55%),hsl(39, 100%, 55%),hsl(286, 98%, 55%),white);
+    width: 30vw;
+    height: 60vh;
+    position: absolute;
+    z-index: -1;
+    padding: 5px;
+    border-radius: 10px;
+    animation: spin 5s  infinite;
+    animation-fill-mode: both;
+    animation-direction:alternate-reverse;
+}
+@keyframes spin{
+    from{
+        --angle:0deg;
+    }
+    to{
+        --angle:360deg;
+    }
+}
+.container::before{
+    filter: blur(1.5rem);
+    opacity: 0.5;
+}
+h2{
+    font-size: 2rem;
+    text-align: center;
+}
+p{
+    font-size: 1.1rem;
+    text-align: justify;
+    padding: 0 30px;
+    overflow: hidden;
+}
