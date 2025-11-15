@@ -1,0 +1,89 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+nav {
+    background: #fff;
+    padding: 20px;
+    width: 80px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: width 0.6s linear;
+}
+
+.active {
+    width: 400px;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 0;
+    transition: width 0.6s linear;
+}
+.active ul {
+    width: 100%;
+    margin-left: 100px;
+}
+li {
+    list-style: none;
+    margin: 0 10px;
+    transform: rotate(0deg);
+    opacity: 0;
+    transition: transform 0.6s linear;
+}
+.active li {
+    opacity: 1;
+    transform: rotate(360deg);
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+button {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.line {
+    width: 30px;
+    height: 2px;
+    background-color: crimson;
+    position: absolute;
+    top: 10px;
+    transition: transform 0.6s linear;
+}
+
+.line2 {
+    top: 20px;
+}
+
+nav.active .line1 {
+    transform: rotate(-45deg) translateY(5.5px);
+}
+
+nav.active .line2 {
+    transform: rotate(45deg) translateY(-5.5px);
+}

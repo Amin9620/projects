@@ -1,0 +1,31 @@
+@import 'resets';
+@import 'emoji';
+$colors:(
+    "primary":#8e44ad,
+    "secondary": #f1c40f,
+    "blue":#3498db,
+    "red":#e74c3c,
+    "green":#48e13a,
+    "orange":#f39c12,
+    "black":black,
+    "white":white,
+    "purple":#9b59b6,
+    "gray":#95a5a6,
+);
+
+@each $key,$val in $colors{
+    .bg-#{$key}{
+        background-color: $val;
+    }
+    .text-#{$key}{
+        color: $val;
+    }
+    @if($val !=black and $val !=white){
+
+        @for $i from 1 through 9 {
+        .bg-#{$key}-light-#{$i}{
+            background-color: mix(white,$val,$i *10%);
+        }
+    }
+    }
+};
